@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Innovative Information Systems - Izrada custom informacijskih sustava i baza podataka">
+    <title>Innovative Information Systems</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #FFFFFF;
+            --text-color: #252422;
+            --border-color: #E5E4E2;
+        }
+
+        html[data-theme="dark"] {
+            --bg-color: #252422;
+            --text-color: #E5E4E2;
+            --border-color: #3A3935;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Albert Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            background-color: var(--bg-color);
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--text-color);
+            letter-spacing: -0.5px;
+        }
+
+        .header-controls {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        button {
+            background: none;
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            padding: 8px 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-family: 'Albert Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: var(--border-color);
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        /* Main Container */
+        main {
+            min-height: calc(100vh - 200px);
+        }
+
+        .section {
+            padding: 60px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section:not(:last-child) {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .section p {
+            font-size: 16px;
+            line-height: 1.8;
+            max-width: 800px;
+        }
+
+        .contact-link {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 2px solid var(--text-color);
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-link:hover {
+            opacity: 0.7;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-color);
+            border-top: 1px solid var(--border-color);
+            padding: 40px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section {
+            margin-bottom: 24px;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .footer-section p {
+            margin-bottom: 8px;
+        }
+
+        .footer-divider {
+            border-top: 1px solid var(--border-color);
+            margin-top: 24px;
+            padding-top: 24px;
+        }
+
+        .footer-notice {
+            font-size: 12px;
+            opacity: 0.7;
+            margin-top: 16px;
+            max-width: 600px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 16px;
+                padding: 16px 20px;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            .header-controls {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .section {
+                padding: 40px 20px;
+            }
+
+            .section h2 {
+                font-size: 24px;
+            }
+
+            .section p {
+                font-size: 15px;
+            }
+
+            footer {
+                padding: 24px 20px;
+            }
+        }
+
+        /* Accessibility */
+        button:focus-visible,
+        .contact-link:focus-visible {
+            outline: 2px solid var(--text-color);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <a href="#" class="logo">IIS</a>
+
+        <div class="header-controls">
+            <button id="languageBtn" aria-label="Switch language">HR / EN</button>
+            <button id="themeBtn" aria-label="Toggle dark mode">🌙</button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Content Section -->
+        <section class="section" id="content">
+            <h2 data-hr="Naše usluge" data-en="Our services">Naše usluge</h2>
+            <p data-hr="U Innovative Information Systems specijaliziramo se u izради custom informacijskih sustava pri­lagođenih vašim poslovnim potrebama. Naš tim razvija sveobuhvatna rješenja koja uključuju dizajn i implementaciju baza podataka, razvoj softvera te infrastrukturne podrške. Fokusirani smo na pružanju visokokvalitetnih rješenja koja vašim poslovnim procesima donose efikasnost i konkurentnost na tržištu." data-en="At Innovative Information Systems, we specialize in creating custom information systems tailored to your business needs. Our team develops comprehensive solutions that include database design and implementation, software development, and infrastructure support. We're committed to delivering high-quality solutions that bring efficiency and competitiveness to your business processes.">U Innovative Information Systems specijaliziramo se u izradi custom informacijskih sustava prilagođenih vašim poslovnim potrebama. Naš tim razvija sveobuhvatna rješenja koja uključuju dizajn i implementaciju baza podataka, razvoj softvera te infrastrukturne podrške. Fokusirani smo na pružanju visokokvalitetnih rješenja koja vašim poslovnim procesima donose efikasnost i konkurentnost na tržištu.</p>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section" id="contact">
+            <h2 data-hr="Kontakt" data-en="Contact">Kontakt</h2>
+            <p data-hr="Za više informacija ili da saznate kako možemo pomoći vašoj tvrtci, slobodno nas kontaktirajte." data-en="For more information or to learn how we can help your company, feel free to reach out to us.">Za više informacija ili da saznate kako možemo pomoći vašoj tvrtci, slobodno nas kontaktirajte.</p>
+            <p style="margin-top: 16px;">
+                <a href="mailto:info@innovativeis.hr" class="contact-link">info@innovativeis.hr</a>
+            </p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <p><strong>Innovative Information Systems d.o.o.</strong> <span data-hr="za usluge" data-en="for services">za usluge</span></p>
+                <p data-hr="Prisavlje 12, Zagreb" data-en="Prisavlje 12, Zagreb">Prisavlje 12, Zagreb</p>
+            </div>
+
+            <div class="footer-section">
+                <p data-hr="Trgovački sud u Zagrebu | Temeljni kapital 2.500 € uplaćen u cijelosti" data-en="Commercial Court in Zagreb | Share capital €2,500 fully paid in">Trgovački sud u Zagrebu | Temeljni kapital 2.500 € uplaćen u cijelosti</p>
+            </div>
+
+            <div class="footer-section">
+                <p data-hr="Članovi društva: Nikša Stanović" data-en="Members: Nikša Stanović">Članovi društva: Nikša Stanović</p>
+            </div>
+
+            <div class="footer-section">
+                <p><strong>IBAN:</strong> HR0723400091111389922</p>
+                <p data-hr="Privredna banka Zagreb d.d." data-en="Privredna banka Zagreb d.d.">Privredna banka Zagreb d.d.</p>
+            </div>
+
+            <div class="footer-divider">
+                <p class="footer-notice" data-hr="Ova web stranica ne prikuplja niti obrađuje osobne podatke posjetitelja niti koristi kolačiće. Svi podaci unešeni kroz kontaktni obrazac koriste se isključivo za odgovaranje na vaš upit i ne dijele se s trećim stranama." data-en="This website does not collect or process personal data of visitors and does not use cookies. All information provided through contact forms is used solely to respond to your inquiry and is not shared with third parties.">Ova web stranica ne prikuplja niti obrađuje osobne podatke posjetitelja niti koristi kolačiće. Svi podaci unešeni kroz kontaktni obrazac koriste se isključivo za odgovaranju na vaš upit i ne dijele se s trećim stranama.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Language management
+        const LANGUAGE_KEY = 'iis-language';
+        const THEME_KEY = 'iis-theme';
+
+        let currentLanguage = localStorage.getItem(LANGUAGE_KEY) || 'hr';
+
+        // Initialize theme based on system preference and localStorage
+        function initializeTheme() {
+            const savedTheme = localStorage.getItem(THEME_KEY);
+
+            if (savedTheme) {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+            } else {
+                // Check system preference
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (prefersDark) {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                }
+            }
+        }
+
+        // Update theme button icon
+        function updateThemeButton() {
+            const theme = document.documentElement.getAttribute('data-theme');
+            const themeBtn = document.getElementById('themeBtn');
+            themeBtn.textContent = theme === 'dark' ? '☀️' : '🌙';
+        }
+
+        // Toggle theme
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem(THEME_KEY, newTheme);
+            updateThemeButton();
+        }
+
+        // Update language
+        function updateLanguage(lang) {
+            currentLanguage = lang;
+            localStorage.setItem(LANGUAGE_KEY, lang);
+
+            document.querySelectorAll('[data-hr][data-en]').forEach(element => {
+                element.textContent = element.getAttribute(`data-${lang}`);
+            });
+
+            document.documentElement.setAttribute('lang', lang);
+            updateLanguageButton();
+        }
+
+        // Update language button
+        function updateLanguageButton() {
+            const langBtn = document.getElementById('languageBtn');
+            langBtn.textContent = currentLanguage === 'hr' ? 'HR / EN' : 'HR / EN';
+        }
+
+        // Toggle language
+        function toggleLanguage() {
+            const newLanguage = currentLanguage === 'hr' ? 'en' : 'hr';
+            updateLanguage(newLanguage);
+        }
+
+        // Listen for system theme changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            if (!localStorage.getItem(THEME_KEY)) {
+                const theme = e.matches ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', theme);
+                updateThemeButton();
+            }
+        });
+
+        // Initialize on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            initializeTheme();
+            updateThemeButton();
+            updateLanguage(currentLanguage);
+        });
+
+        // Event listeners
+        document.getElementById('themeBtn').addEventListener('click', toggleTheme);
+        document.getElementById('languageBtn').addEventListener('click', toggleLanguage);
+    </script>
+
+</body>
+</html>
