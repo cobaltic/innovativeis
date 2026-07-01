@@ -104,7 +104,8 @@ a {
     font-size: 1.05rem;
 }
 
-h1 {
+.content-inner h1,
+.contact-inner h1 {
     font-size: 1.4rem;
     font-weight: 500;
     margin: 0 0 1rem;
@@ -152,12 +153,9 @@ h1 {
         height: 1.5rem;
     }
 
-    .content-inner h1 {
+    .content-inner h1,
+    .contact-inner h1 {
         font-size: 1.3rem;
-    }
-
-    .contact-inner h2 {
-        font-size: 1.1rem;
     }
 }
 
@@ -166,7 +164,8 @@ h1 {
         height: 1.1rem;
     }
 
-    .content-inner h1 {
+    .content-inner h1,
+    .contact-inner h1 {
         font-size: 1.1rem;
     }
 }
